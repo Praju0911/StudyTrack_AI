@@ -146,7 +146,7 @@ from celery.schedules import crontab
 CELERY_BEAT_SCHEDULE = {
     'send-morning-notification': {
         'task': 'ui.tasks.send_daily_reminders',
-        'schedule': crontab(hour=2, minute=21), # 8:00 AM
+        'schedule': crontab(hour=20, minute=00), # 8:00 AM
     },
     'send-afternoon-notification': {
         'task': 'ui.tasks.send_daily_reminders',
@@ -158,7 +158,7 @@ CELERY_BEAT_SCHEDULE = {
     },
     'send-ai-quiz-reminders': {
         'task': 'ui.tasks.send_ai_quiz_reminders',
-        'schedule': crontab(hour=2, minute=21), # Every day at 9:30 AM
+        'schedule': crontab(hour=9, minute=30), # Every day at 9:30 AM
     },
 }
 
